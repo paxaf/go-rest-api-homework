@@ -89,7 +89,7 @@ func getTask(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
 	task, ok := tasks[id]
 	if !ok {
-		http.Error(w, "", http.StatusBadRequest)
+		http.Error(w, "Задачи с таким ID не существует", http.StatusBadRequest)
 		return
 	}
 
